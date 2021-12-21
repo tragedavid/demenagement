@@ -16,6 +16,12 @@ class CreateCardboardsTable extends Migration
         Schema::create('cardboards', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('code')->nullable();
+            $table->string('name');
+            $table->integer('id_item')->unsigned();
+            $table->foreign('id_item')
+                ->references('id')
+                ->on('items');
         });
     }
 

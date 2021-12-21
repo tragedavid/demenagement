@@ -16,6 +16,11 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->integer('id_cardboard')->unsigned();
+            $table->foreign('id_cardboard')
+                ->references('id')
+                ->on('cardboards');
         });
     }
 
