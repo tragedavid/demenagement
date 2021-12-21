@@ -17,3 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/items', 'ItemController@list');
+Route::get('/item/create', 'ItemController@create');
+Route::post('/item/insert', 'ItemController@insert');
+Route::get('/item/edit/{id}', 'ItemController@edit');
+Route::post('/item/update/{id}', 'ItemController@update');
+Route::delete('/item/delete/{id}', 'ItemController@delete');
